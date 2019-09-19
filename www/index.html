@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="js/jquery.mobile-1.4.5.min.css">
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  <script src="cordova.js"></script>
+</head>
+
+<body>
+  <div data-role="page" id="pageone" data-theme="a">
+
+    <div data-role="header">
+      <h1>Simple Calculator</h1>
+
+            <div data-role="navbar">
+              <ul>
+                <li><a href="#pageone" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                <li><a href="#pagetwo" data-icon="grid">Calculator</a></li>
+                <li><a href="#pagethree" data-icon="info">Help</a></li>
+              </ul>
+            </div>
+    </div>
+   <p>This is a jQuery mobile exercise which provides the user with a calculator for basic mathematical operations.</p>
+
+
+    <div data-role="footer">
+      <h1>Homework</h1>
+    </div>
+  </div>
+
+  <div data-role="page" id="pagetwo" >
+
+    <div data-role="header">
+      <h1>Simple Calculator</h1>
+
+            <div data-role="navbar">
+              <ul>
+                <li><a href="#pageone" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                <li><a href="#pagetwo" data-icon="grid">Calculator</a></li>
+                <li><a href="#pagethree" data-icon="info">Help</a></li>
+              </ul>
+            </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+    <form>
+       <input type="number" name="Number" pattern="[0-9]*" id="num1">
+
+       <select name="select-choice-a" id="select" data-native-menu="false">
+         <option>Operators</option>
+         <option value="+">+</option>
+         <option value="-">-</option>
+         <option value="*">*</option>
+         <option value="/">/</option>
+       </select>
+
+       <input type="number" name="Number" pattern="[0-9]*" id="num2">
+
+       <a onclick="calculator()" href="#pageresult" id="calc" class="ui-btn">Calculate</a>
+    </form>
+
+    </div>
+
+    <div data-role="footer">
+      <h1>Homework</h1>
+    </div>
+  </div>
+
+  <div data-role="page" id="pagethree" >
+
+    <div data-role="header">
+      <h1>Simple Calculator</h1>
+
+            <div data-role="navbar">
+              <ul>
+                <li><a href="#pageone" class="ui-btn-active ui-state-persist" data-icon="home">Home</a></li>
+                <li><a href="#pagetwo" data-icon="grid">Calculator</a></li>
+                <li><a href="#pagethree" data-icon="info">Help</a></li>
+              </ul>
+            </div>
+    </div>
+
+    <div data-role="main" class="ui-content">
+    <form>
+       <input type="number" name="Number" pattern="[0-9]*" id="num1">
+
+       <select name="select-choice-a" id="select" data-native-menu="false">
+         <option>Operators</option>
+         <option value="+">+</option>
+         <option value="-">-</option>
+         <option value="*">*</option>
+         <option value="/">/</option>
+       </select>
+
+       <input type="number" name="Number" pattern="[0-9]*" id="num2">
+
+       <a onclick="calculator()" href="#pageresult" id="calc" class="ui-btn">Calculate</a>
+    </form>
+
+    </div>
+
+    <div data-role="footer">
+      <h1>Homework</h1>
+    </div>
+  </div>
+
+  <div data-role="page"  id="pageresult" >
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#pageone" data-icon="home">Home</a></li>
+					<li><a href="#pagetwo" class="ui-btn-active ui-state-persist" data-icon="grid">Calculator</a></li>
+					<li><a href="#pagethree" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<h3>Operation:</h3>
+			<h4 id="operation"></h4>
+
+			<h3>Results:</h3>
+			<h4 id="print"></h4>
+
+			<a href="#pagetwo" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+		</div>
+
+		<div data-role="footer">
+			<h1>Homework</h1>
+		</div>
+	</div>
+
+  <div data-role="page" id="pagethree" >
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#pageone" data-icon="home">Home</a></li>
+					<li><a href="#pagetwo" data-icon="grid">Calculator</a></li>
+					<li><a href="#pagethree" class="ui-btn-active ui-state-persist" data-icon="info">Help</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<p>This is the help section and provides basic information about how to use the calculator.</p>
+
+			<a href="#pagehelp" class="ui-btn ui-icon-info ui-btn-icon-left">More Info</a>
+		</div>
+
+		<div data-role="footer">
+			<h1>Homework</h1>
+		</div>
+	</div>
+
+	<div data-role="page"  data-dialog="true" id="pagehelp" >
+		<div data-role="header">
+			<h1>Simple Calculator</h1>
+		</div>
+
+		<div data-role="main" class="ui-content">
+			<p>You have requested more information about the App.</p>
+
+			<a href="#pagethree" class="ui-btn ui-icon-back ui-btn-icon-left">Dismiss</a>
+		</div>
+	</div>
+
+  <script>
+  	function calculator(){
+  		var first = parseInt(document.getElementById("num1").value);
+  		var second = parseInt(document.getElementById("num2").value);
+  		var operator = document.getElementById("select").value;
+
+  		switch(operator){
+  			case '+':
+  				var result = first + second;
+  				break;
+
+  			case '-':
+  				var result = first - second;
+  				break;
+
+  			case '*':
+  				var result = first * second;
+  				break;
+
+  			case '/':
+  				var result = first / second;
+  				break;
+
+  			default:
+  				break;
+  		}
+  		document.getElementById("operation").innerHTML = first + " " + operator + " " +  second;
+  		document.getElementById("print").innerHTML = result;
+  	}
+  </script>
+</body>
+
+</html>
