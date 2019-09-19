@@ -7,7 +7,7 @@
 
 <!-- versionCode is optional and Android only -->
     
-  <name>My Calcualtor</name>
+  <name>My Calculator</name>
 
   <description>
       A very simple calculator App.
@@ -16,6 +16,6 @@
   <author href="https://build.phonegap.com" email="geerish.suddul@gmail.com">
       Geerish Suddul
   </author>
-
+   
 
 </widget>
